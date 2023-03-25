@@ -6,13 +6,13 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Methods;
+namespace VkSlim\Methods;
 
 use JetBrains\PhpStorm\Pure;
-use VkEasySdk\Rules;
-use VkEasySdk\VkClient;
-use VkEasySdk\Wrappers\Http\VkRequest;
-use VkEasySdk\Wrappers\Http\VkResponse;
+use VkSlim\Rules;
+use VkSlim\VkClient;
+use VkSlim\Wrappers\Http\VkRequest;
+use VkSlim\Wrappers\Http\VkResponse;
 
 class Bot extends VkClient {
 
@@ -100,6 +100,22 @@ class Bot extends VkClient {
     }
 
     /**
+     * Удаление сообщения
+     *
+     * @param array $delete_message_ids - массив с ids сообщений которые следует удалить
+     * @param bool $delete_for_all
+     * @return VkResponse
+     */
+    public function delete(array $delete_message_ids = [], bool $delete_for_all = false): VkResponse {
+        return $this->messages()->delete([
+            'cmids' => $this->response->message->conversation_message_id,
+            'peer_id' => $this->response->message->peer_id,
+            'message_ids' => implode(',', $delete_message_ids),
+            'delete_for_all' => $delete_for_all,
+        ]);
+    }
+
+    /**
      * Ответ на сообщение
      *
      * @param string|null $message
@@ -107,13 +123,7 @@ class Bot extends VkClient {
      * @return VkResponse
      */
     public function reply(string $message = null, array $attachments = []): VkResponse {
-        $forward = json_encode([
-            'conversation_message_ids' => $this->response->message->conversation_message_id,
-            'peer_id' => $this->response->message->peer_id,
-            'is_reply' => true,
-        ]);
-
-        return $this->answer($message, $attachments, forward: $forward);
+        return $this->answer($message, $attachments, reply_to: $this->response->message->id);
     }
 
     /**
@@ -125,12 +135,12 @@ class Bot extends VkClient {
      * @return VkResponse
      */
     public function forward(string $message = null, array $forward_message_ids = [], array $attachments = []): VkResponse {
-        $forward = json_encode([
+        $forward = [
             'conversation_message_ids' => implode(',', $forward_message_ids),
             'peer_id' => $this->response->message->peer_id,
-        ]);
+        ];
 
-        return $this->answer($message, $attachments, forward: $forward);
+        return $this->messages()->send($forward);
     }
 
     #[Pure] public function rules(): Rules {

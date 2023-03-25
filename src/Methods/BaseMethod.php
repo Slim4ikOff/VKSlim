@@ -6,9 +6,9 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Methods;
+namespace VkSlim\Methods;
 
-use VkEasySdk\Wrappers\Http\VkRequest;
+use VkSlim\Wrappers\Http\VkRequest;
 
 abstract class BaseMethod {
 

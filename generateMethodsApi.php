@@ -1,11 +1,11 @@
 <?php
 
-use VkEasySdk\Wrappers\Http\VkResponse;
+use VkSlim\Wrappers\Http\VkResponse;
 
 require_once 'vendor\autoload.php';
 
 echo '<pre>';
-$http = new \VkEasySdk\Wrappers\Http\HttpClient();
+$http = new \VkSlim\Wrappers\Http\HttpClient();
 $response = $http->send('POST', 'https://api.vk.com/method/documentation.getMenu?lang=ru&menu_id=api_menu&access_token=anonym.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhbm9ueW1faWQiOjEyNTEzODQzNTMsImFwcF9pZCI6NzU5ODc2OCwiaWF0IjoxNjQ5NjY5Nzg0LCJpc192ZXJpZmllZCI6ZmFsc2UsImV4cCI6MTY0OTc1NjE4NCwic2lnbmVkX3RpbWUiOm51bGx9.PZcRHumMpn1BycUpnMGa8f-bL9DWl_rLD26qyngkTWg&v=5.131');
 
 $json = json_decode((string) $response->getBody(), true);
@@ -23,9 +23,9 @@ foreach ($methods as $method) {
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Methods;
+namespace VkSlim\Methods;
 
-use VkEasySdk\Wrappers\Http\VkResponse;
+use VkSlim\Wrappers\Http\VkResponse;
 
 class " . $title . " extends BaseMethod {\r\n";
 

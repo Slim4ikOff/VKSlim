@@ -6,10 +6,10 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk;
+namespace VkSlim;
 
-use VkEasySdk\Exceptions\VkJsonException;
-use VkEasySdk\Methods\Bot;
+use VkSlim\Exceptions\VkJsonException;
+use VkSlim\Methods\Bot;
 
 class Rules {
 
@@ -65,6 +65,15 @@ class Rules {
         }
 
         return false;
+    }
+
+    /**
+     * Если это голосовое сообщение
+     *
+     * @return bool
+     */
+    public function isVoice(): bool {
+        return !empty($this->response->message->attachments[0]->audio_message);
     }
 
     /**

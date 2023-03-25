@@ -1,8 +1,8 @@
 <?php
 
-namespace VkEasySdk;
+namespace VkSlim;
 
-use VkEasySdk\Exceptions\VkJsonException;
+use VkSlim\Exceptions\VkJsonException;
 
 /**
  * Created by Alexey Gaydarly

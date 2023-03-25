@@ -6,9 +6,9 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\State;
+namespace VkSlim\State;
 
-use VkEasySdk\Exceptions\VkStateException;
+use VkSlim\Exceptions\VkStateException;
 
 class FileState {
 

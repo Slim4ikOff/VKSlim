@@ -6,13 +6,13 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Carousel\Elements;
+namespace VkSlim\Carousel\Elements;
 
 class Text {
 
     private array $elements = [];
 
-    private array $action = ['type' => 'open_link', 'link' => 'https://github.com/YoppiDev/VkEasySdk'];
+    private array $action = ['type' => 'open_link', 'link' => 'https://github.com/YoppiDev/VkSlim'];
 
     private string $title;
 

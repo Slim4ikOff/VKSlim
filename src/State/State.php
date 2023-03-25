@@ -6,7 +6,7 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\State;
+namespace VkSlim\State;
 
 trait State {
 

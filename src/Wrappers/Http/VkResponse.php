@@ -6,11 +6,11 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Wrappers\Http;
+namespace VkSlim\Wrappers\Http;
 
 use Psr\Http\Message\ResponseInterface;
-use VkEasySdk\Exceptions\VkJsonException;
-use VkEasySdk\Utils;
+use VkSlim\Exceptions\VkJsonException;
+use VkSlim\Utils;
 
 class VkResponse {
 

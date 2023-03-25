@@ -1,6 +1,6 @@
 <?php
 
-namespace VkEasySdk\Methods;
+namespace VkSlim\Methods;
 
 class Adsweb extends BaseMethod {
 

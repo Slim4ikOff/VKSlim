@@ -6,7 +6,7 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Keyboard\Buttons;
+namespace VkSlim\Keyboard\Buttons;
 
 interface ButtonInterface {
     public function get();

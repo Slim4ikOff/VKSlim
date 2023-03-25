@@ -6,12 +6,12 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk;
+namespace VkSlim;
 
 
 use JetBrains\PhpStorm\Pure;
-use VkEasySdk\Wrappers\Http\VkRequest;
-use VkEasySdk\Methods\{Account,
+use VkSlim\Wrappers\Http\VkRequest;
+use VkSlim\Methods\{Account,
     Ads,
     Adsweb,
     AppWidgets,

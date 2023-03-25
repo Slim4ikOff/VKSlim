@@ -1,6 +1,6 @@
 {
-    "name": "slim4ik_off/vk_easy_sdk",
-    "description": "php library for vk api",
+    "name": "slim4ikoff/vkslim",
+    "description": "php library for api vk.com",
     "require": {
       "php": ">=8.1",
       "ext-pdo": "*",
@@ -10,8 +10,8 @@
     },
     "autoload": {
         "psr-4": {
-            "VkEasySdk\\": "src",
-            "VkEasySdk\\State\\": "states"
+            "VkSlim\\": "src",
+            "VkSlim\\State\\": "states"
         }
     }
 }

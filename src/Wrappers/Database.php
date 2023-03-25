@@ -6,11 +6,11 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Wrappers;
+namespace VkSlim\Wrappers;
 
 use PDO;
 use PDOStatement;
-use VkEasySdk\Exceptions\VkDatabaseException;
+use VkSlim\Exceptions\VkDatabaseException;
 
 class Database {
 

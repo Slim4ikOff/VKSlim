@@ -6,7 +6,7 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Wrappers\Http;
+namespace VkSlim\Wrappers\Http;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;

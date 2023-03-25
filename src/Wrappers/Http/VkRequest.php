@@ -6,14 +6,14 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Wrappers\Http;
+namespace VkSlim\Wrappers\Http;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
-use VkEasySdk\Exceptions\VkJsonException;
+use VkSlim\Exceptions\VkJsonException;
 
 class VkRequest {
 

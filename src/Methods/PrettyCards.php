@@ -6,9 +6,9 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Methods;
+namespace VkSlim\Methods;
 
-use VkEasySdk\Wrappers\Http\VkResponse;
+use VkSlim\Wrappers\Http\VkResponse;
 
 class PrettyCards extends BaseMethod {
 

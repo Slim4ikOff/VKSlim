@@ -6,15 +6,15 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Keyboard;
+namespace VkSlim\Keyboard;
 
-use VkEasySdk\Keyboard\Buttons\AppsButton;
-use VkEasySdk\Keyboard\Buttons\ButtonInterface;
-use VkEasySdk\Keyboard\Buttons\CallbackButton;
-use VkEasySdk\Keyboard\Buttons\LinkButton;
-use VkEasySdk\Keyboard\Buttons\LocationButton;
-use VkEasySdk\Keyboard\Buttons\PayButton;
-use VkEasySdk\Keyboard\Buttons\TextButton;
+use VkSlim\Keyboard\Buttons\AppsButton;
+use VkSlim\Keyboard\Buttons\ButtonInterface;
+use VkSlim\Keyboard\Buttons\CallbackButton;
+use VkSlim\Keyboard\Buttons\LinkButton;
+use VkSlim\Keyboard\Buttons\LocationButton;
+use VkSlim\Keyboard\Buttons\PayButton;
+use VkSlim\Keyboard\Buttons\TextButton;
 
 class Keyboard {
 

@@ -6,10 +6,10 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Carousel;
+namespace VkSlim\Carousel;
 
-use VkEasySdk\Carousel\Elements\Photo;
-use VkEasySdk\Carousel\Elements\Text;
+use VkSlim\Carousel\Elements\Photo;
+use VkSlim\Carousel\Elements\Text;
 
 class Carousel {
 

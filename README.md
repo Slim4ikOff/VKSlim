@@ -2,8 +2,8 @@
     <?php
     require_once 'vendor\autoload.php';
     
-    use VkEasySdk\Methods\Bot;
-    use VkEasySdk\VkCallback;
+    use VkSlim\Methods\Bot;
+    use VkSlim\VkCallback;
 
     $callback = new VkCallback('токен бота', 'строка подтверждения');
     
@@ -64,19 +64,19 @@
 ![Клавиатура](image/img.png)
 ![Клавиатура](image/img_1.png)
 
-    use VkEasySdk\Keyboard\Keyboard;
-    use VkEasySdk\Keyboard\Buttons\Color;
-    use VkEasySdk\Keyboard\Buttons\CallbackButton;
-    use VkEasySdk\Keyboard\Buttons\LinkButton;
-    use VkEasySdk\Keyboard\Buttons\LocationButton;
-    use VkEasySdk\Keyboard\Buttons\PayButton;
-    use VkEasySdk\Keyboard\Buttons\TextButton;
+    use VkSlim\Keyboard\Keyboard;
+    use VkSlim\Keyboard\Buttons\Color;
+    use VkSlim\Keyboard\Buttons\CallbackButton;
+    use VkSlim\Keyboard\Buttons\LinkButton;
+    use VkSlim\Keyboard\Buttons\LocationButton;
+    use VkSlim\Keyboard\Buttons\PayButton;
+    use VkSlim\Keyboard\Buttons\TextButton;
 
     $keyboard = new Keyboard();
     $k = $keyboard
         ->create(inline: true)
         ->add(new TextButton('Text button', Color::POSITIVE, ['button' => 'one']))
-        ->add(new LinkButton('Нажми меня', 'https://github.com/YoppiDev/VkEasySdk', payload: ['button' => 'two']))
+        ->add(new LinkButton('Нажми меня', 'https://github.com/YoppiDev/VkSlim', payload: ['button' => 'two']))
         ->row()
         ->add(new CallbackButton('Callback кнопка', Color::PRIMARY, ['callback' => 'done']))
         ->add(new LocationButton(['callback' => 'done']))
@@ -87,7 +87,7 @@
 
 **Инициализация**
 
-    $database = new \VkEasySdk\Wrappers\Database();
+    $database = new \VkSlim\Wrappers\Database();
     $database->connect('mysql', '127.0.0.1', 'root', '', 'test');
 
 **Префикс таблиц**

@@ -6,7 +6,7 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk\Carousel;
+namespace VkSlim\Carousel;
 
 interface Element {
     public function json(): string;

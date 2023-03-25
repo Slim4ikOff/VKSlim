@@ -6,10 +6,11 @@
  * Email: prophotosv@gmail.com
  */
 
-namespace VkEasySdk;
+namespace VkSlim;
 
-use VkEasySdk\Exceptions\VkCallbackException;
-use VkEasySdk\Methods\Bot;
+use VkSlim\Exceptions\VkCallbackException;
+use VkSlim\Methods\Bot;
+use VkSlim\Wrappers\CallbackData;
 
 class VkCallback {
 
@@ -47,7 +48,7 @@ class VkCallback {
      * @param string|array $types через массив можно указать сразу несколько событий, к примеру message_new и message_delete
      * @param callable $callback
      */
-    public function event(string|array $types, callable $callback) {
+    public function event(string|array $types, callable $callback): void {
         if(is_array($types)) {
             foreach ($types as $type) {
                 $this->events[$type] = $callback;
@@ -70,13 +71,9 @@ class VkCallback {
             exit();
         }
 
-        $webhook = file_get_contents('php://input');
+        $webhook = CallbackData::listener();
 
-        if(empty($webhook)) {
-            exit();
-        }
-
-        if($webhook = Utils::jsonValidate($webhook)) {
+        if(!empty($webhook)) {
             if ($this->secret != null && $this->secret != $webhook->secret) {
                 throw new VkCallbackException('Secret key, not valid!');
             }
@@ -88,7 +85,6 @@ class VkCallback {
                 $webhook->object->group_id = $webhook->group_id;
                 $return = isset($this->events[$webhook->type]) ? $this->events[$webhook->type] ($bot, $webhook->object, (int) $webhook->group_id): null;
                 $this->send_ok();
-                //echo 'ok';
                 return $return;
             }
         }
